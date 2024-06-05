@@ -1,35 +1,19 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import SideNavBar from "./components/SideNav";
+import SideNavBarItem from "./components/SideNav/SideNavBarItem.tsx";
+import {BarChart3, Boxes, LayoutDashboard, Settings, UserCircle} from "lucide-react";
 
 function App() {
-  const [count, setCount] = useState(0)
-
-  return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    return (
+        <SideNavBar>
+            <SideNavBarItem icon={<LayoutDashboard size={20}/>} text="Dashboard" alert />
+            <SideNavBarItem icon={<BarChart3 size={20}/>} text="Statistics" active />
+            <SideNavBarItem icon={<UserCircle size={20}/>} text="Users" alert />
+            <SideNavBarItem icon={<Boxes size={20}/>} text="Inventory" />
+            <hr className="my-3" />
+            <SideNavBarItem icon={<Settings size={20}/>} text="Settings" />
+        </SideNavBar>
+    )
 }
 
 export default App
