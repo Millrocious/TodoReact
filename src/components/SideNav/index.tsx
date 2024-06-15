@@ -10,16 +10,13 @@ const SideNavBar = (props: Props) => {
     const [expanded, setExpanded] = useState(true)
 
     return (
-        <aside className="h-screen">
-            <nav className="h-full flex flex-col bg-neutral-900 shadow-sm">
+        <aside>
+            <nav className="h-full flex flex-col rounded-2xl bg-neutral-900 shadow-sm">
                 <div className="p-4 pb-2 flex justify-between items-center">
-                    <img
-                        src="https://img.logoipsum.com/243.svg"
-                        className={`overflow-hidden transition-all ${
-                            expanded ? "w-32" : "w-0"
-                        }`}
-                        alt=""
-                    />
+                    <h1 className={`overflow-hidden transition-all ${expanded ? "w-32" : "w-0"}`}>
+                        <span className="font-extrabold text-indigo-200">Todos</span>
+                        <span className="font-bold text-white">React</span>
+                    </h1>
                     <button
                         onClick={() => setExpanded((curr) => !curr)}
                         className="p-1.5 rounded-lg bg-neutral-800 hover:bg-gray-100"
